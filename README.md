@@ -6,12 +6,12 @@ A nice and simple way to host some gifs that I like.
 
 Install dependencies:
 
-$ make setup
+	$ make setup
 
 Build the site:
 
-$ make build
+	$ make build
 
 Serve the site locally:
 
-$ make serve
+	$ make serve
