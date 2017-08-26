@@ -10,37 +10,32 @@ title: All the gifs
         body {
             margin: 0;
             padding: .5em;
+            background: rgb(25, 25, 25);
+            color: #ccc;
+            font-family: sans-serif;
         }
 
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        li {
-            padding-bottom: 2em;
+        .gif, .gif a {
+            display: inline-block;
         }
 
         a {
-            color: blue;
-            text-align: center;ri
+            color: #4897d0;
+            text-decoration: none;
         }
     </style>
 </head>
 
 <body>
-    <ul>
     {% for file in site.static_files %}
         {% if file.extname == ".gif" %}
-            <li>
-                <a href="{{ file.path | remove_first: "/" }}"><img src="{{file.path}}" height="100"></a>
-                <br>
-                <a href="{{ file.path | remove_first: "/" }}">{{ file.path | remove_first: "/" }}</a>
-            </li>
+        <div class="gif">
+            <a href="{{ file.path | remove_first: "/" }}">
+                <img src="{{file.path}}" height="100">
+            </a>
+        </div>
         {% endif %}
     {% endfor %}
-    </ul>
 
     <hr>
 
