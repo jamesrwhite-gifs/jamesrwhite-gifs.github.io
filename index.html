@@ -15,8 +15,10 @@ title: All the gifs
             font-family: sans-serif;
         }
 
-        .gif, .gif a {
-            display: inline-block;
+        #gifs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
         a {
@@ -27,15 +29,15 @@ title: All the gifs
 </head>
 
 <body>
-    {% for file in site.static_files %}
-        {% if file.extname == ".gif" %}
-        <div class="gif">
+    <div id="gifs">
+        {% for file in site.static_files %}
+            {% if file.extname == ".gif" %}
             <a href="{{ file.path | remove_first: "/" }}">
                 <img src="{{file.path}}" height="100">
             </a>
-        </div>
-        {% endif %}
-    {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </div>
 
     <hr>
 
