@@ -33,7 +33,7 @@ title: All the gifs
         {% for file in site.static_files %}
             {% if file.extname == ".gif" %}
             <a href="{{ file.path | remove_first: "/" }}">
-                <img src="{{file.path}}" height="100">
+                <img src="{{file.path}}" height="100" loading="lazy">
             </a>
             {% endif %}
         {% endfor %}
